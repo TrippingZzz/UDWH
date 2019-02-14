@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Discord WebHook Generator</title>
+
+  <!-- Meta Info (https://stackoverflow.com/a/18872319/7504056) -->
+  <!-- Search Engine -->
+  <meta name="description" content="Send WebHooks to Discord to create fancy messages">
+  <meta name="keywords" content="discord, utils, discord-utils, richembed generator, discord helper">
+  <link rel="author" href="https://twitter.com/@xDimGG" />
+  <!-- Facebook -->
+  <meta property="og:image" content="/src/favicon/icon.jpg">
+  <meta property="og:description" content="Send WebHooks to Discord to create fancy messages">
+  <meta property="og:title" content="Discord WebHook Generator">
+  <meta property="og:site_name" content="Discord Utils">
+  <meta property="og:see_also" content="https://utils.dim.codes">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@xDimGG">
+  <meta name="twitter:title" content="Discord WebHook Generator">
+  <meta name="twitter:description" content="Send WebHooks to Discord to create fancy messages">
+  <meta name="twitter:image" content="/src/favicon/icon.jpg">
+  <!-- Google+ -->
+  <meta itemprop="name" content="Discord WebHook Generator">
+  <meta itemprop="description" content="Send WebHooks to Discord to create fancy messages">
+  <meta itemprop="image" content="/src/favicon/icon.jpg">
+  <!-- Web App -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="D.JS-Utils">
+  <meta name="apple-mobile-web-app-title" content="D.JS-Utils">
+  <meta name="theme-color" content="#23272A">
+  <meta name="msapplication-navbutton-color" content="#23272A">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="msapplication-starturl" content="/">
+  <link rel="icon" type="image/png" sizes="192x192" href="/src/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="144x144" href="/src/favicon/android-icon-144x144.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/src/favicon/android-icon-96x96.png">
+  <link rel="icon" type="image/png" sizes="72x72" href="/src/favicon/android-icon-72x72.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/src/favicon/android-icon-48x48.png">
+  <link rel="icon" type="image/png" sizes="36x36" href="/src/favicon/android-icon-36x36.png">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/src/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/src/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/src/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/src/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/src/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/src/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/src/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/src/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/src/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/src/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/src/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/src/favicon/favicon-16x16.png">
+  <meta name="msapplication-TileColor" content="#23272A">
+  <meta name="msapplication-TileImage" content="/src/favicon/ms-icon-144x144.png">
+
+  <link href="//fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="/src/css/app.css">
+</head>
+<body>
+  <div id="loader"><div class="loader"></div></div>
+  <nav class="navbar is-hidden-mobile">
+    <a class="navbar-item" href="https://dim.codes" target="_blank">Dim</a>
+    <a class="navbar-item logo" href="/">Discord Utils</a>
+    <a class="navbar-item" href="https://discord.dim.codes" target="_blank">Discord</a>
+  </nav>
+  <main>
+    <section class="section">
+  <div class="container">
+    <div class="columns is-multiline">
+      <div class="column is-6">
+        <h2 class="subtitle is-4">WebHook Info</h2>
+        <input type="text" class="input" id="url" placeholder="WebHook URL">
+        <input type="text" class="input" id="webhook_name" placeholder="WebHook Name" data-lpignore="true">
+        <input type="text" class="input" id="webhook_icon" placeholder="WebHook Icon URL">
+        <textarea class="textarea" id="content" placeholder="Message Content" maxlength="2000"></textarea>
+      </div>
+      <div class="column is-6">
+        <h2 class="subtitle is-4">Message Embed</h2>
+        <textarea class="textarea" id="text" placeholder="Embed Content" maxlength="2048"></textarea>
+        <input type="text" class="input" id="color" placeholder="Hex Color">
+        <input type="text" class="input" id="thumbnail" placeholder="Thumbnail URL">
+        <input type="text" class="input" id="image" placeholder="Image URL">
+      </div>
+      <div class="column is-6">
+        <h2 class="subtitle is-4">Message Title</h2>
+        <input type="title" class="input" id="title" placeholder="Title">
+        <input type="title" class="input" id="title_link" placeholder="Title Link">
+        <input type="text" class="input" id="author_name" placeholder="Author Name" data-lpignore="true">
+        <input type="text" class="input" id="author_link" placeholder="Author Link">
+        <input type="text" class="input" id="author_icon" placeholder="Author Icon URL">
+      </div>
+      <div class="column is-6">
+        <h2 class="subtitle is-4">Message Footer</h2>
+        <input type="text" class="input" id="footer" placeholder="Footer">
+        <input type="text" class="input" id="footer_icon" placeholder="Footer Icon URL">
+        <!-- <input type="text" class="input" id="author_icon" placeholder="Author Icon URL"> -->
+      </div>
+    </div>
+    <div id="submit">
+      <div class="button is-primary">Send WebHook</div>
+    </div>
+    <div id="youtube"><a href="https://youtu.be/lvKbZg6sW9s" target="_blank" tabindex="-1">How To Use?</a> • <a href="https://dimbot.xyz" target="_blank" tabindex="-1">My Bot</a></div>
+  </div>
+</section>
+  </main>
+  <script src="/src/js/jquery.js" charset="utf-8"></script>
+  <script src="/src/js/app.js" charset="utf-8"></script>
+</body>
+</html>
